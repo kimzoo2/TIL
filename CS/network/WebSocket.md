@@ -36,8 +36,25 @@
 - 메세지 브로커를 이용하는 pub/sub 기반이기 때문에 외부 브로커를 사용할 수 있다. (카프카, rabbitMQ 등)
 
 
+### webSocket 세션 vs HTTP 세션
+- 웹소켓세션은 HTTP 세션의 보안이 적용되지 않는다.
+#### WebSocket 세션에 굳이 HTTP 세션을 저장하는 이유
+- 로그인 하지 않은 사용자가 웹소켓 세션에 접근할 수 있다.
+- 사용자 식별이 어렵다. 어떤 사용자가 메세지를 보냈는지 식별하기 어렵다.
+```
+3/1 추가사항
+Spring Security를 사용하면 세션 정보를 Principal로부터 가져올 수 있다.
+Spring Security를 사용하지 않으면 Interceptor를 통해 가져올 수 있는데 중간에 HTTP 세션 정보가 변경되면 update 해줘야 할 수도 있음.
+세션은 어차피 세션 쿠키에 저장되기 때문에 브라우저를 닫지 않는 이상 업데이트를 해줘야할 필요성을 못 느끼겠다.
++ 일부러 세션 쿠키를 제거한다면 어차피 로그아웃 될거다.
+```
+
 
 참고
 - [ably](https://ably.com/topic/websockets-vs-http)
 - [wikipedia](https://ko.wikipedia.org/wiki/%EC%9B%B9%EC%86%8C%EC%BC%93)
 - [geeksforgeeks](https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/)
+- https://velog.io/@koseungbin/WebSocket#annotated-controllers
+- https://jinn-blog.tistory.com/152
+- https://blog.leaphop.co.kr/blogs/56
+- https://javakyu4030.tistory.com/entry/SpringFrameworkWebSocketSession%EC%97%90%EC%84%9C-HttpSession-%EA%B0%92-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0
