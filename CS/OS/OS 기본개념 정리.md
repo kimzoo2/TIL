@@ -50,7 +50,7 @@
 - 아니다. java도 JIT로 먼저 컴파일을 하여 속도를 줄이고 인터프리터를 이용하여 읽어들인다.
 
 ## 명령어 구조
-![memory hierarchy](../../os/codeStructure.png)
+![memory hierarchy](../../img/os/codeStructure.png)
 - 명령어는 명령 코드와 오퍼랜드로 구분되어 있다.
 
 ### 명령코드(Operation Code)
@@ -297,7 +297,7 @@
 - 캐시 메모리의 등장 배경을 이해하기 위해서는 저장 장치 계층 구조(memory hierarchy)의 이해가 필요하다.
 - CPU에서 얼마나 가까운가를 계층적으로 표현한 것
 
-![memory hierarchy](../../os/Memory-Hierarchy-Design-768.png)
+![memory hierarchy](../../img/os/Memory-Hierarchy-Design-768.png)
 출처 - https://www.geeksforgeeks.org/memory-hierarchy-design-and-its-characteristics/
 - CPU와 가까운 저장 장치는 빠르고 멀리 있는 저장 장치는 느리다.
 - 속도가 빠른 저장 장치는 용량이 작고 가격이 비싸다.
@@ -381,15 +381,15 @@
 
 ### RAID의 종류
 - RAID0 : 여러개의 하드디스크에 데이터를 스트라이핑한다. 저장된 데이터는 스트라입이라 한다.
-- ![RAID0](../../os/raid0.jpeg)
+- ![RAID0](../../img/os/raid0.jpeg)
 - RAID1 : 복사본을 만드는 방식이다. 거울처럼 완전한 복사본을 만드는 방식을 미러링이라 한다. 복구가 매우 간단하나, 복사본때문에 용량이 줄어들어 비용이 많이 드는 단점이 있다. 속도도 0에 비해 저하된다.
-- ![RAID1](../../os/raid1.jpeg)
+- ![RAID1](../../img/os/raid1.jpeg)
 - RAID4 : 완전한 복사본을 만드는 대신 오류를 검출하고 복구하기 위한 정보인 패리티 비트를 저장한다.
-- ![RAID4](../../os/raid4.jpeg)
+- ![RAID4](../../img/os/raid4.jpeg)
 - RAID5 : RAID4의 문제점인 병목현상을 제거하기 위해 패리티 비트를 분산 저장한다.
-- ![RAID5](../../os/raid5.jpeg)
+- ![RAID5](../../img/os/raid5.jpeg)
 - RAID6 : RAID5와 구성이 같으나 서로 다른 패리티 비트를 저장한다. 쓰기 속도는 저하되나 더 안전한다.
-- ![RAID6](../../os/raid6.jpeg)
+- ![RAID6](../../img/os/raid6.jpeg)
 
 * * *
 # 입출력장치
@@ -424,9 +424,9 @@
 - CPU가 프로그램 속 명령어를 실행할 때 입출력 명령어를 만나면 입출력 작업을 수행한다.
 
 #### 과정
-![](../../os/programio1.png)
-![](../../os/programio2.png)
-![](../../os/programio3.png)
+![](../../img/os/programio1.png)
+![](../../img/os/programio2.png)
+![](../../img/os/programio3.png)
 
 **그렇다면 CPU는 어떻게 수많은 입출력 장치의 주소를 알고 있는걸까?**
 - 크게 두가지 방법이 있다.
@@ -488,7 +488,7 @@
 - 운영체제가 각 프로세스마다 PCB를 확인한다는 것은 비효율적이다. 프로세스 100개가 CPU 할당을 요구한다면 100개의 PCB를 확인해야하기 때문이다.
 - 그래서 운영체제는 프로세스에게 줄을 서라고 한다. 이때 '줄'이 바로 **스케줄링 큐**이다. (참고로 큐는 반드시 선입선출을 이유는 없다.)
 - 프로세스가 관리하는 큐는 여러 종류가 있는데, 대표적으로 준비 큐와 대기 큐가 존재한다.
-![](../../os/processQueue.png)
+![](../../img/os/processQueue.png)
 
 
 ### 선점형 스케줄링과 비선점형 스케줄링
