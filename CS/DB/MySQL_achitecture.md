@@ -250,7 +250,7 @@ ex) group by를 처리하기 위해 임시 테이블을 사용하는 경우
 **하나의 스레드**가 **여러개의 커넥션**을 전담 => 1:N <br />
 
 
-![](https://blogs.oracle.com/content/published/api/v1.1/assets/CONTE8109BC375E241128246B99B91D67120/Medium?cb=_cache_1b66&format=jpg&channelToken=32954b2a813146c9b9a4fa99364eba8e)
+![threadpool.png](..%2F..%2Fimg%2Fdb%2Fthreadpool.png)
 출처 - [mysql dev blog](https://dev.mysql.com/blog-archive/the-new-mysql-thread-pool/)
 
 receiver thread - 들어오는 연결 요청을 처리하는 스레드, 라운드 로빈 방식으로 스레드 그룹에 커넥션을 할당
